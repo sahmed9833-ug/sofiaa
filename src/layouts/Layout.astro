@@ -4,10 +4,16 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const navigationItems = [
+	{ title: "Home", path: "/"},
+	{ title: "Experience", path: "/experience"},
+	{ title: "Education", path: "/education"},
+	{ title: "More", path: "/more"},
+];
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-periwinkle">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,20 +22,28 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header class="border-b-solid border-b-2 border-b-paynes-grey">
+			<nav class="flex justify-between max-w-screen-2xl p-4">
+				<a class="flex" href="/">Sofiaa</a>
+				<ul class="flex justify-between">
+					{navigationItems.map(page => (
+						<li class="mr-4 h-fit">
+							<a href={page.path} class="text-gunmetal block lg:inline-block px-4 py-2 border-solid border-2 border-paynes-grey rounded-xl">
+								{page.title}
+							</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+		</header>
+		<main class="m-auto p-2 max-w-xl">
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 </style>
