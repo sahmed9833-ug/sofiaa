@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { formatDate } from '../helpers';
+
+export interface Props {
+    entry: CollectionEntry<"education">
+}
+
+const { entry } = Astro.props;
+---
+<article class="font-mono p-4 mb-4 border-solid border-2 border-periwinkle rounded-xl">
+    <h2><span class="text-xl font-semibold">{entry.data.course}</span> &sdot; <span>{entry.data.institution}</span></h2>
+    <p>{formatDate(entry.data.from)} - {formatDate(entry.data.to)}</p>
+    <p>Grade: {entry.data.grade}</p>
+    <details>
+        <summary>Modules</summary>
+        <ul class="ml-2">
+            {entry.data.modules.map(module => (
+                <li class="list-inside list-disc">{module}</li>
+            ))}
+        </ul>
+    </details>
+    {entry.body && 
+        <details>
+            <summary>More</summary>
+            <>
+            {entry.body}
+            </>
+        </details>
+    }
+</article>

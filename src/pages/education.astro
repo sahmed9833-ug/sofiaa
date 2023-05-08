@@ -1,30 +1,19 @@
 ---
+import EducationCard from "../components/EducationCard.astro";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
 
 const education = await getCollection('education');
 ---
 <Layout title="Education">
-    <main>
-        <ul role="list" class="link-card-grid">
-            {education.map(educationEntry => (
-                <Card
-                href="https://docs.astro.build/"
-                title={educationEntry.data.institution}
-                body={educationEntry.body}
-            />
-            ))}
-        </ul>
-    </main>
+    {education.sort((a, b) => {
+        return a.data.from < b.data.from ? 1 : -1;
+    }).map(entry => (
+        <EducationCard entry={entry}/>
+    ))}
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));

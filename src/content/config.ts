@@ -6,8 +6,9 @@ export const collections = {
             institution: z.string(),
             course: z.string(),
             modules: z.array(z.string()),
-            from: z.string().transform((str: string | number | Date) => new Date(str)),
-            to: z.nullable(z.string().transform((str: string | number | Date) => new Date(str))),
+            grade: z.string(),
+            from: z.date(),
+            to: z.nullable(z.date()),
         }),
     }),
     'experience': defineCollection({

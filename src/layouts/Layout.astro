@@ -1,4 +1,6 @@
 ---
+import Button from '../components/Button.astro';
+
 export interface Props {
 	title: string;
 }
@@ -13,30 +15,31 @@ const navigationItems = [
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-periwinkle">
+<html lang="en" class="bg-slate-100 dark:bg-paynes-grey max-h-full">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<meta name="theme-color" content="#F1F5F9" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#4F6272" media="(prefers-color-scheme: dark)">
+		<title>{title} - Sofiaa!</title>
 	</head>
-	<body>
-		<header class="border-b-solid border-b-2 border-b-paynes-grey">
+	<body class="max-h-full">
+		<header>
 			<nav class="flex justify-between max-w-screen-2xl p-4">
 				<a class="flex" href="/">Sofiaa</a>
 				<ul class="flex justify-between">
 					{navigationItems.map(page => (
 						<li class="mr-4 h-fit">
-							<a href={page.path} class="text-gunmetal block lg:inline-block px-4 py-2 border-solid border-2 border-paynes-grey rounded-xl">
-								{page.title}
-							</a>
+							<Button path={page.path} title={page.title}/>
 						</li>
 					))}
 				</ul>
 			</nav>
 		</header>
-		<main class="m-auto p-2 max-w-xl">
+		<main class="m-auto p-2 max-w-prose h-full">
+			<h1 class="text-4xl font-mono font-bold mb-4">{title}</h1>
 			<slot />
 		</main>
 	</body>
