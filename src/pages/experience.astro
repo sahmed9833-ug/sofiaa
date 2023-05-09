@@ -1,0 +1,21 @@
+---
+import ExperienceCard from "../components/ExperienceCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const experience = await getCollection('experience');
+---
+<Layout title="Experience">
+    {experience.map(entry => (
+        <ExperienceCard entry={entry}/>
+    ))}
+</Layout>
+
+<style>
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

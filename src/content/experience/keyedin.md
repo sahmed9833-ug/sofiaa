@@ -9,7 +9,7 @@ roles:
         - jQuery
         - TypeScript
         - SQL Server
-      from: 18-09-2018,
-      to: 10-10-2019
+      from: 2018-09-18
+      to: 2019-10-10
 location: Cleckheaton, West Yorkshire, United Kingdom
 ---

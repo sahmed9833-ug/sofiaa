@@ -18,8 +18,8 @@ export const collections = {
                 title: z.string(),
                 description: z.string(),
                 tech: z.array(z.string()),
-                from: z.string().transform((str) => new Date),
-                to: z.nullable(z.string().transform((str: string | number | Date) => new Date(str))),
+                from: z.date(),
+                to: z.nullable(z.date()),
             })),
             location: z.string()
         })

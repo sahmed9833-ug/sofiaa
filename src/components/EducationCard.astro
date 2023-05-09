@@ -1,27 +1,21 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import { formatDate } from '../helpers';
+import Accordion from './Accordion.astro';
 
 export interface Props {
-    entry: CollectionEntry<"education">
+    entry: CollectionEntry<"education">;
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<article class="font-mono p-4 mb-4 border-solid border-2 border-periwinkle rounded-xl">
+<article class="font-mono p-4 mb-4 border-solid border-2 border-periwinkle bg-slate-300 bg-opacity-10 rounded-xl">
     <h2><span class="text-xl font-semibold">{entry.data.course}</span> &sdot; <span>{entry.data.institution}</span></h2>
     <p>{formatDate(entry.data.from)} - {formatDate(entry.data.to)}</p>
     <p class="mb-4">Grade: {entry.data.grade}</p>
     <div class="prose font-sans" aria-hidden="true">
-        <details class="group bg-periwinkle bg-opacity-25 p-4 rounded-lg">
-            <summary class="cursor-pointer transition-margin ease-out group-open:mb-4">Modules</summary>
-            <ul role="list" class="marker:text-gunmetal my-2">
-                {entry.data.modules.map(module => (
-                    <li>{module}</li>
-                ))}
-            </ul>
-        </details>
+        <Accordion summary="Modules" details={entry.data.modules}/>
         {entry.body && <Content/>}
     </div>
 </article>
