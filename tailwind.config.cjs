@@ -9,7 +9,12 @@ module.exports = {
 				'paynes-grey': '#4F6272',
 				'light-green': '#7CEA9C'
 			},
+			transitionProperty: {
+				'margin': 'margin',
+			  }
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography')
+	],
 }

@@ -29,7 +29,7 @@ const navigationItems = [
 		<header>
 			<nav class="flex justify-between max-w-screen-2xl p-4">
 				<a class="flex" href="/">Sofiaa</a>
-				<ul class="flex justify-between">
+				<ul role="navigation" class="flex justify-between">
 					{navigationItems.map(page => (
 						<li class="mr-4 h-fit">
 							<Button path={page.path} title={page.title}/>
