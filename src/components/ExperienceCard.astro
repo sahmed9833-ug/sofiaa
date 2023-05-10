@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import { formatDate } from '../helpers';
 import Accordion from './Accordion.astro';
+import Card from './Card.astro';
 
 export interface Props {
     entry: CollectionEntry<"experience">
@@ -9,7 +10,7 @@ export interface Props {
 
 const { entry } = Astro.props;
 ---
-<article class="font-mono p-4 mb-4 border-solid border-2 border-periwinkle bg-slate-300 bg-opacity-10 rounded-xl">
+<Card>
     <h2 class="text-xl font-semibold">{entry.data.company}</h2>
     <p>{entry.data.location}</p>
     {entry.data.roles.sort((a, b) => {
@@ -20,8 +21,8 @@ const { entry } = Astro.props;
             <p class="mb-4">{formatDate(role.from)} - {formatDate(role.to)}</p>
             <div class="prose font-sans" aria-hidden="true">
                 <p set:html={role.description}/>
-                <Accordion summary="Techstack" details={role.tech}/>
+                <Accordion summary="Tools & technologies" details={role.tech}/>
             </div>
         </section>
     ))}
-</article>
+</Card>
