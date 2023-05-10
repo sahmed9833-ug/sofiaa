@@ -2,6 +2,7 @@
 institution: Leeds City College
 course: FdSc Applied Computing
 modules:
+    - Pooping
     - Advanced Web Development
     - Human-Computer Interaction
     - Software Development
