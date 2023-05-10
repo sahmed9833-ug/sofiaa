@@ -1,0 +1,22 @@
+---
+import Button from '../components/Button.astro';
+
+const navigationItems = [
+	{ title: "Home", path: "/"},
+	{ title: "Experience", path: "/experience"},
+	{ title: "Education", path: "/education"},
+	{ title: "More", path: "/more"},
+];
+---
+<header>
+    <nav class="flex justify-between max-w-screen-2xl p-4">
+        <a class="flex" href="/">Sofiaa</a>
+        <ul role="navigation" class="flex justify-between">
+            {navigationItems.map(page => (
+                <li class="mr-4 h-fit">
+                    <Button path={page.path} title={page.title}/>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</header>

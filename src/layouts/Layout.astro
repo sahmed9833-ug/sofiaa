@@ -1,17 +1,11 @@
 ---
-import Button from '../components/Button.astro';
+import Header from '../components/Header.astro';
 
 export interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-const navigationItems = [
-	{ title: "Home", path: "/"},
-	{ title: "Experience", path: "/experience"},
-	{ title: "Education", path: "/education"},
-	{ title: "More", path: "/more"},
-];
 ---
 
 <!DOCTYPE html>
@@ -26,18 +20,7 @@ const navigationItems = [
 		<title>{title} - Sofiaa!</title>
 	</head>
 	<body class="max-h-full">
-		<header>
-			<nav class="flex justify-between max-w-screen-2xl p-4">
-				<a class="flex" href="/">Sofiaa</a>
-				<ul role="navigation" class="flex justify-between">
-					{navigationItems.map(page => (
-						<li class="mr-4 h-fit">
-							<Button path={page.path} title={page.title}/>
-						</li>
-					))}
-				</ul>
-			</nav>
-		</header>
+		<Header/>
 		<main class="m-auto p-2 max-w-prose h-full">
 			<h1 class="text-4xl font-mono font-bold mb-4">{title}</h1>
 			<slot />
