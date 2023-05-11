@@ -9,9 +9,6 @@ module.exports = {
 				'paynes-grey': '#4F6272',
 				'light-green': '#7CEA9C'
 			},
-			transitionProperty: {
-				'margin': 'margin',
-			},
 			boxShadow: {
 				'periwinkle': '-4px 4px 0 #B7C3F3',
 				'periwinkle-hover': '-2px 2px 0 #B7C3F3'

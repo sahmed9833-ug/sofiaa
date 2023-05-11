@@ -7,13 +7,12 @@ export interface Props {
 const { summary, details } = Astro.props;
 ---
 <details class="group bg-periwinkle bg-opacity-25 rounded-lg">
-    <summary class="cursor-pointer transition-margin ease-out p-4 group-open:mb-4 group-open:pb-0">{summary}</summary>
-    <div class="px-4 pb-2">
+    <summary class="cursor-pointer p-4 group-open:pb-0">{summary}</summary>
+    <div class="px-4 pb-1">
         <ul role="list" class="marker:text-gunmetal">
             {details.map(detailItem => (
                 <li>{detailItem}</li>
             ))}
         </ul>
     </div>
-    <slot/>
 </details>
