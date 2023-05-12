@@ -1,5 +1,6 @@
 ---
 import Button from '../components/Button.astro';
+import Logo from './Logo.astro';
 
 const navigationItems = [
 	{ title: 'Home', path: '/'},
@@ -8,19 +9,19 @@ const navigationItems = [
 	{ title: 'More', path: '/more'},
 ];
 ---
-<header class="fixed w-full bg-slate-100">
-    <nav class="p-4 max-w-prose mx-auto sm:flex justify-between">
+<header class="fixed w-full bg-slate-100 dark:bg-slate-500">
+    <nav class="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
         <div class="flex justify-between">
-            <a href="/">Sofiaa</a>
+            <Logo/>
             <button data-menu-button class="p-3 sm:hidden active:bg-periwinkle rounded-full transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                   </svg>              
             </button>
         </div>
-        <ul data-menu-nav role="navigation" class="hidden pt-4 sm:pt-0 sm:flex">
+        <ul data-menu-nav role="navigation" class="hidden pt-4 sm:pt-0 sm:flex sm:items-center">
             {navigationItems.map(page => (
-                <li class="mb-4 last:mb-2 sm:mr-4 sm:last:mr-0 sm:mb-0 h-fit">
+                <li class="mb-4 last:mb-2 sm:last:mb-0 sm:mr-4 sm:last:mr-0 sm:mb-0 h-fit">
                     <Button path={page.path} title={page.title}/>
                 </li>
             ))}
