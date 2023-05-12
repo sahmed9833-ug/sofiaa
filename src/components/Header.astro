@@ -2,21 +2,70 @@
 import Button from '../components/Button.astro';
 
 const navigationItems = [
-	{ title: "Home", path: "/"},
-	{ title: "Experience", path: "/experience"},
-	{ title: "Education", path: "/education"},
-	{ title: "More", path: "/more"},
+	{ title: 'Home', path: '/'},
+	{ title: 'Experience', path: '/experience'},
+	{ title: 'Education', path: '/education'},
+	{ title: 'More', path: '/more'},
 ];
 ---
-<header>
-    <nav class="flex justify-between max-w-screen-2xl p-4">
-        <a class="flex" href="/">Sofiaa</a>
-        <ul role="navigation" class="flex justify-between">
+<header class="fixed w-full bg-slate-100">
+    <nav class="p-4 max-w-prose mx-auto sm:flex justify-between">
+        <div class="flex justify-between">
+            <a href="/">Sofiaa</a>
+            <button data-menu-button class="p-3 sm:hidden active:bg-periwinkle rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>              
+            </button>
+        </div>
+        <ul data-menu-nav role="navigation" class="hidden pt-4 sm:pt-0 sm:flex">
             {navigationItems.map(page => (
-                <li class="mr-4 h-fit">
+                <li class="mb-4 last:mb-2 sm:mr-4 sm:last:mr-0 sm:mb-0 h-fit">
                     <Button path={page.path} title={page.title}/>
                 </li>
             ))}
         </ul>
     </nav>
 </header>
+
+<script>
+    let headerBorderThreshold = 1;
+    window.addEventListener('scroll', toggleHeaderBorder, true);
+    setMenuClickEvent();
+
+    function toggleHeaderBorder() {
+        const header = document.querySelector('header') as HTMLElement;
+        const borderColour = 'border-periwinkle';
+        const borderWidth = 'border-b-2';
+
+        if (!header) {
+            return;
+        }
+
+        if (window.scrollY < headerBorderThreshold) {
+            header.classList.remove(borderColour);
+            header.classList.remove(borderWidth)
+            return;
+        }
+
+        header.classList.add(borderColour);
+        header.classList.add(borderWidth);
+    }
+
+    function setMenuClickEvent() {
+        const button = document.querySelector('[data-menu-button') as HTMLElement;
+        const menu = document.querySelector('[data-menu-nav') as HTMLElement;
+
+        if (!button || !menu) {
+            return;
+        }
+
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+
+            // when mobile nav is open ensure border is on by overriding scroll behaviour.
+            headerBorderThreshold = menu.classList.contains('hidden') ? 1 : 0;
+            toggleHeaderBorder();
+        })
+    }
+</script>
