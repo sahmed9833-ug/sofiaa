@@ -9,20 +9,20 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-slate-100 dark:bg-paynes-grey max-h-full">
+<html lang="en" class="bg-slate-100 dark:bg-slate-500 max-h-full">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#F1F5F9" media="(prefers-color-scheme: light)">
-		<meta name="theme-color" content="#4F6272" media="(prefers-color-scheme: dark)">
+		<meta name="theme-color" content="#64748B" media="(prefers-color-scheme: dark)">
 		<title>{title} - Sofiaa!</title>
 	</head>
 	<body class="max-h-full">
 		<Header/>
-		<main class="m-auto max-w-prose p-2 h-full pt-20 sm:pt-44">
-			<h1 class="text-4xl font-mono font-bold mb-4 ml-1 sm:ml-0">{title}</h1>
+		<main class="m-auto max-w-prose p-2 h-full pt-32 sm:pt-44">
+			<h1 class="text-4xl text-slate-200 font-mono font-bold mb-4 ml-1 sm:ml-0">{title}</h1>
 			<slot />
 		</main>
 	</body>

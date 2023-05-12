@@ -1,3 +1,22 @@
-<article class="font-mono p-4 mb-4 border-solid border-2 border-periwinkle shadow-periwinkle-hover bg-slate-50 rounded-xl">
+---
+const classNames = [
+	'font-mono',
+	'text-slate-300',
+	'dark:prose-p:text-slate-300',
+	'dark:prose-li:text-slate-300',
+	'p-4',
+	'mb-4',
+	'border-2',
+	'border-periwinkle',
+	'dark:border-paynes-grey',
+	'shadow-periwinkle-hover',
+	'dark:shadow-paynes-grey-hover',
+	'bg-slate-50',
+	'dark:bg-slate-500',
+	'rounded-xl'
+]
+---
+
+<article class={classNames.join(" ")}>
 	<slot/>
 </article>

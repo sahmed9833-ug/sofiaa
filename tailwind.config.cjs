@@ -12,7 +12,9 @@ module.exports = {
 			},
 			boxShadow: {
 				'periwinkle': '-4px 4px 0 #B7C3F3',
-				'periwinkle-hover': '-2px 2px 0 #B7C3F3'
+				'periwinkle-hover': '-2px 2px 0 #B7C3F3',
+				'paynes-grey': '-4px 4px 0 #4F6272',
+				'paynes-grey-hover': '-2px 2px 0 #4F6272'
 			}
 		},
 	},
