@@ -15,7 +15,7 @@ const { Content } = await entry.render();
     <h2><span class="text-xl font-semibold">{entry.data.course}</span> &sdot; <span>{entry.data.institution}</span></h2>
     <p>{formatDate(entry.data.from)} - {formatDate(entry.data.to)}</p>
     <p class="mb-4">Grade: {entry.data.grade}</p>
-    <div class="prose font-sans" aria-hidden="true">
+    <div class="prose font-sans">
         <Accordion summary="Modules" details={entry.data.modules}/>
         {entry.body && <Content/>}
     </div>
