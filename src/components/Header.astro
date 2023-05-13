@@ -31,7 +31,9 @@ const navigationItems = [
 
 <script>
     let headerBorderThreshold = 1;
+
     window.addEventListener('scroll', toggleHeaderBorder, true);
+    
     setMenuClickEvent();
 
     function toggleHeaderBorder() {
@@ -61,7 +63,7 @@ const navigationItems = [
         button.addEventListener('click', () => {
             menu.classList.toggle('hidden');
 
-            // when mobile nav is open ensure border is on by overriding scroll behaviour.
+            // when mobile nav is open ensure border is on regardless of scroll position.
             headerBorderThreshold = menu.classList.contains('hidden') ? 1 : 0;
             toggleHeaderBorder();
         })
