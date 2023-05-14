@@ -1,10 +1,11 @@
 ---
 export interface Props {
-    path: string
-    title: string
+    path: string;
+    title: string;
+    target?: string;
 }
 
-const { path, title } = Astro.props;
+const { path, title, target = '_self' } = Astro.props;
 
 // Let's save on horizontal scrolls by putting the button class names into an array. 
 const buttonClassNames = [
@@ -26,9 +27,9 @@ const buttonClassNames = [
     "dark:shadow-paynes-grey",
     "dark:hover:shadow-paynes-grey-hover",
     "btn",
-]
+];
 ---
-<a href={path} class={buttonClassNames.join(" ")}>
+<a href={path} class={buttonClassNames.join(" ")} target={target || "_self"}>
     {title}
 </a>
 
