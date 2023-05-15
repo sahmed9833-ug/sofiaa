@@ -8,7 +8,7 @@ const navigationItems = [
 	{ title: 'Education', path: '/education'}
 ];
 ---
-<header class="fixed w-full bg-slate-100 dark:bg-slate-500 bg-opacity-90 backdrop-blur-md border-b-periwinkle dark:border-b-paynes-grey">
+<header class="z-10 fixed w-full bg-slate-100 dark:bg-slate-500 bg-opacity-90 backdrop-blur-md border-b-periwinkle dark:border-b-paynes-grey">
     <nav class="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
         <div class="flex justify-between items-center">
             <Logo/>
@@ -53,18 +53,27 @@ const navigationItems = [
 
     function setMenuClickEvent() {
         const button = document.querySelector('[data-menu-button') as HTMLElement;
-        const menu = document.querySelector('[data-menu-nav') as HTMLElement;
 
-        if (!button || !menu) {
+        if (!button) {
             return;
         }
 
-        button.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        button.addEventListener('click', () => toggleMenu());
+    }
 
-            // when mobile nav is open ensure border is on regardless of scroll position.
-            headerBorderThreshold = menu.classList.contains('hidden') ? 1 : 0;
-            toggleHeaderBorder();
-        })
+    function toggleMenu() {
+        const menu = document.querySelector('[data-menu-nav') as HTMLElement;
+        const main = document.querySelector('main') as HTMLElement;
+
+        if (!menu || !main) {
+            return;
+        }
+
+        menu.classList.toggle('hidden');
+        main.classList.toggle('opacity-20');
+
+        // when mobile nav is open ensure border is on regardless of scroll position.
+        headerBorderThreshold = menu.classList.contains('hidden') ? 1 : 0;
+        toggleHeaderBorder();
     }
 </script>
