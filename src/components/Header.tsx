@@ -21,8 +21,8 @@ class Header extends Component<{}, { isMenuOpen: boolean, isScrolled: boolean }>
     render() {
         return (
             <div>
-                <div className={`${this.state.isMenuOpen ? 'bg-black/50 z-10' : 'bg-transparent -z-10'} transition-all h-screen w-screen fixed`}></div>
-                <header className={`${this.state.isMenuOpen || this.state.isScrolled ? 'border-b-2' : ''} transition-all z-10 fixed w-full bg-slate-100 dark:bg-slate-600 bg-opacity-90 backdrop-blur-md border-b-periwinkle dark:border-b-gunmetal`}>
+                <div className={`${this.state.isMenuOpen ? 'bg-black/50 z-10' : 'bg-transparent -z-10'} transition-all h-screen w-screen fixed sm:hidden`}></div>
+                <header className={`${this.state.isMenuOpen ? 'border-b-2 sm:border-b-0' : ''} ${this.state.isScrolled ? 'border-b-2' : ''} transition-all z-10 fixed w-full bg-slate-100 dark:bg-slate-600 bg-opacity-90 backdrop-blur-md border-b-periwinkle dark:border-b-gunmetal`}>
                     <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
                         <div className="flex justify-between items-center">
                             <a href="/" className="w-20 sm:w-32 cursor-pointer hover:scale-95 active:scale-90 transition-all" aria-label="Home">
