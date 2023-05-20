@@ -38,7 +38,7 @@ class Header extends Component<{}, { isMenuOpen: boolean, isScrolled: boolean }>
                                 </svg>
                             </button>
                         </div>
-                        <ul role="navigation" className={`${this.state.isMenuOpen ? '' : 'hidden'} pt-4 sm:pt-0 sm:flex sm:items-center`}>
+                        <ul className={`${this.state.isMenuOpen ? '' : 'hidden'} pt-4 sm:pt-0 sm:flex sm:items-center`}>
                             {this.navigationItems.map(page => (
                                 <li key={page.title} className="mb-4 last:mb-2 sm:last:mb-0 sm:mr-4 sm:last:mr-0 sm:mb-0 h-fit">
                                     <Button title={page.title} path={page.path}/>
