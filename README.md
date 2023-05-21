@@ -9,4 +9,6 @@ A complete rewrite of my previous [online CV/portfolio](https://github.com/sahme
   - A relatively straight-forward [Multi-page application (MPA)](https://docs.astro.build/en/concepts/mpa-vs-spa/) with minimal JavaScript is much more sensible way to go.
   - While I'm still a fan of the utilitarian approach I took with the design, it was beginning to grow stale and I felt like something with a little more _pizzazz_.
 - I wanted to dip my toes into the world of Tailwind and throwing myself into the deep-end by using it to style a website from scratch seemed a good way to go about it.
+- A cool feature of Astro is the ability to [integrate many popular JavaScript component frameworks](https://docs.astro.build/en/core-concepts/framework-components/#using-framework-components). 
+  - This means when I feel like playing with React, Vue, Svelte or others instead of having to create whole new web apps in them I can just write components for this one. _Psst, check out the *Header* component_.
 - Did I mention I was bored?
