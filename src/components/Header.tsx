@@ -28,7 +28,7 @@ class Header extends Component<{}, { isMenuOpen: boolean, isScrolled: boolean }>
                 <header className={`${this.state.isScrolled ? 'border-b-2' : ''} transition-all z-10 fixed w-full bg-slate-100 dark:bg-slate-600 border-b-periwinkle dark:border-b-gunmetal`}>
                     <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
                         <div className="flex justify-between items-center">
-                            <a href="/" className="w-20 sm:w-32 cursor-pointer hover:scale-95 active:scale-90 transition-all" aria-label="Home">
+                            <a href="/" className={`${this.state.isScrolled ? 'w-14 sm:w-20' : 'w-20 sm:w-32'} cursor-pointer hover:scale-95 active:scale-90 transition-all`} aria-label="Home">
                                 <Logo/>
                             </a>
                             <button
