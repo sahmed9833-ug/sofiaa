@@ -1,21 +1,30 @@
 ---
-import Card from '../components/Card.astro';
-import Layout from '../layouts/Layout.astro';
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.tsx";
 ---
 
 <Layout title="Hi, I'm Sofia.">
-	<Card>
-		<div class="prose font-sans">
-			<p>
-				📍 Based in Manchester, United Kingdom<br>In my day job I work as a Software Engineer on some pretty interesting products in the Supply Chain and IIoT space.
-				<br>In my spare time I enjoy exploring new tech, playing video games, tinkering with computers from the 80s and walking our dogs.
-			</p>
-			<p>For more check out the links below ⤵</p>
-		</div>
-	</Card>
-	<div class="flex justify-evenly">
-		<Button title="GitHub" path="https://github.com/sahmed9833-ug" target="_blank"/>
-		<Button title="LinkedIn" path="https://www.linkedin.com/in/sofia-a-849965150/" target="_blank" />
-	</div>
+  <Card>
+    <div class="prose font-sans">
+      <p>Based in Manchester, United Kingdom📍</p>
+      <p>
+        In my day job I work as a Software Engineer on some pretty interesting products in the
+        Supply Chain and IIoT space.
+      </p>
+      <p>
+        In my spare time I enjoy cooking, writing, playing around with tech both new and old, and
+        walking <a href="/snoots.JPG">the dogs</a>.
+      </p>
+      <p>For more check out the links below ⤵</p>
+    </div>
+  </Card>
+  <div class="flex justify-evenly">
+    <Button title="GitHub" path="https://github.com/sahmed9833-ug" target="_blank" />
+    <Button
+      title="LinkedIn"
+      path="https://www.linkedin.com/in/sofia-a-849965150/"
+      target="_blank"
+    />
+  </div>
 </Layout>
