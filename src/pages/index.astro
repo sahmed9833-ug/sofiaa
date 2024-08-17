@@ -2,6 +2,9 @@
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.tsx";
+import ImageCard from "../components/ImageCard.astro";
+import Accordion from "../components/Accordion.astro";
+import { fade } from "astro:transitions";
 ---
 
 <Layout title="Hi, I'm Sofia.">
@@ -14,8 +17,16 @@ import Button from "../components/Button.tsx";
       </p>
       <p>
         In my spare time I enjoy cooking, crafting, doodling, playing around with tech both new and
-        old, and walking <a href="/snoots.JPG">the dogs</a>.
+        old, and walking the dogs.
       </p>
+      <Accordion summary="The dogs!" details={[]}>
+
+        <div class="flex flex-col p-4 gap-4">
+          <ImageCard imagePath="/src/assets/hannie_roach.jpeg" altText="Hannie, a white greyhound with dark brown patches and spots, lays upside down in her dog bed while gazing vaguely towards the camera."></ImageCard>
+          <ImageCard imagePath="/src/assets/wood.jpeg" altText="Hannie and Marlow, an all black greyhound, are outdoors standing in the glade of a wood. They are both wearing their harneses and while Marlow snoots something on the ground Hannie looks off to the side."></ImageCard>
+          <ImageCard imagePath="/src/assets/marlow_roach.jpeg" altText="Marlow lays upside down at the top of some stairs and gazes down at the camera while baring some of his large teeth."></ImageCard>
+        </div>
+      </Accordion>
       <p>For more check out the links below ⤵</p>
     </div>
   </Card>
