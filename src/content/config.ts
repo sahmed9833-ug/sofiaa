@@ -1,7 +1,7 @@
 import { z, defineCollection } from "astro:content";
 
 export const collections = {
-    'education': defineCollection({
+    education: defineCollection({
         schema: z.object({
             institution: z.string(),
             course: z.string(),
@@ -11,17 +11,19 @@ export const collections = {
             to: z.nullable(z.date()),
         }),
     }),
-    'experience': defineCollection({
+    experience: defineCollection({
         schema: z.object({
             company: z.string(),
-            roles: z.array(z.object({
-                title: z.string(),
-                description: z.string(),
-                tech: z.array(z.string()),
-                from: z.date(),
-                to: z.nullable(z.date()),
-            })),
-            location: z.string()
-        })
-    })
-}
+            roles: z.array(
+                z.object({
+                    title: z.string(),
+                    description: z.string(),
+                    tech: z.array(z.string()),
+                    from: z.date(),
+                    to: z.nullable(z.date()),
+                }),
+            ),
+            location: z.string(),
+        }),
+    }),
+};

@@ -1,7 +1,7 @@
 ---
 export interface Props {
     summary: string;
-    details: string[];
+    details?: string[];
 }
 
 const { summary, details } = Astro.props;
@@ -11,7 +11,7 @@ const { summary, details } = Astro.props;
     <slot></slot>
     <div class="px-4 pb-1">
         <ul role="list" class="marker:text-gunmetal dark:marker:text-slate-300">
-            {details.map(detailItem => (
+            {details && details.map(detailItem => (
                 <li>{detailItem}</li>
             ))}
         </ul>

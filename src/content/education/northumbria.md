@@ -1,5 +1,5 @@
 ---
-institution: Northumbria University 
+institution: Northumbria University
 course: BSc Applied Computing
 modules:
     - Object-oriented and Web Programming

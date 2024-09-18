@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.tsx";
 import ImageCard from "../components/ImageCard.astro";
 import Accordion from "../components/Accordion.astro";
-import { fade } from "astro:transitions";
 ---
 
 <Layout title="Hi, I'm Sofia.">
@@ -19,7 +18,7 @@ import { fade } from "astro:transitions";
         In my spare time I enjoy cooking, crafting, doodling, playing around with tech both new and
         old, and walking the dogs.
       </p>
-      <Accordion summary="The dogs!" details={[]}>
+      <Accordion summary="The dogs!">
 
         <div class="flex flex-col p-4 gap-4">
           <ImageCard imagePath="/src/assets/hannie_roach.jpeg" altText="Hannie, a white greyhound with dark brown patches and spots, lays upside down in her dog bed while gazing vaguely towards the camera."></ImageCard>

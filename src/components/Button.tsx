@@ -2,11 +2,10 @@ type ButtonProps = {
     title: string;
     path: string;
     target?: string;
-}
+};
 
 export default function Button({ title, path, target }: ButtonProps) {
-
-    // Let's save on horizontal scrolls by putting the button class names into an array. 
+    // Let's save on horizontal scrolls by putting the button class names into an array.
     const buttonClassNames = [
         "font-mono",
         "text-paynes-grey",
@@ -38,10 +37,14 @@ export default function Button({ title, path, target }: ButtonProps) {
         "active:top-[3px]",
         "active:-left-[3px]",
     ];
-    
+
     return (
-        <a href={path} className={buttonClassNames.join(" ")} target={target || "_self"}>
+        <a
+            href={path}
+            className={buttonClassNames.join(" ")}
+            target={target || "_self"}
+        >
             {title}
         </a>
-    )
+    );
 }
