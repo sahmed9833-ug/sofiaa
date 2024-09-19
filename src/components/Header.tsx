@@ -10,7 +10,6 @@ export default function Header() {
         { title: "Home", path: "/" },
         { title: "Experience", path: "/experience" },
         { title: "Education", path: "/education" },
-        { title: "🛠️", path: "/playground" },
     ];
 
     useEffect(() => {
