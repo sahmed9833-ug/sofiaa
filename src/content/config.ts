@@ -8,7 +8,7 @@ export const collections = {
             modules: z.array(z.string()),
             grade: z.string(),
             from: z.date(),
-            to: z.nullable(z.date()),
+            to: z.optional(z.date()),
         }),
     }),
     experience: defineCollection({
@@ -17,10 +17,10 @@ export const collections = {
             roles: z.array(
                 z.object({
                     title: z.string(),
-                    description: z.string(),
-                    tech: z.array(z.string()),
+                    description: z.optional(z.string()),
+                    tech: z.optional(z.array(z.string())),
                     from: z.date(),
-                    to: z.nullable(z.date()),
+                    to: z.optional(z.date()),
                 }),
             ),
             location: z.string(),

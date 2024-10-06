@@ -8,12 +8,13 @@ export interface Props {
     entry: CollectionEntry<"experience">
 }
 
-const { entry } = Astro.props;
+const { data } = Astro.props.entry;
+const { company, location, roles } = data;
 ---
 <Card>
-    <h2 class="text-xl font-semibold">{entry.data.company}</h2>
-    <p>{entry.data.location}</p>
-    {entry.data.roles.sort((a, b) => {
+    <h2 class="text-xl font-semibold">{company}</h2>
+    <p>{location}</p>
+    {roles.sort((a, b) => {
         return a.from < b.from ? 1 : -1;
     }).map(role =>(
         <section>

@@ -29,7 +29,7 @@ export default function Header() {
             <header
                 className={`${
                     isScrolled ? "border-b-2" : ""
-                } transition-all z-10 fixed w-full bg-slate-100 dark:bg-slate-600 border-b-periwinkle dark:border-b-gunmetal`}
+                } transition-all motion-reduce:transition-none z-10 fixed w-full bg-slate-100 dark:bg-slate-600 border-b-periwinkle dark:border-b-gunmetal`}
             >
                 <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
                     <div className="flex justify-between items-center">
@@ -37,7 +37,7 @@ export default function Header() {
                             href="/"
                             className={`${
                                 isScrolled ? "w-14 sm:w-20" : "w-20 sm:w-32"
-                            } cursor-pointer hover:scale-95 active:scale-90 transition-all`}
+                            } cursor-pointer hover:scale-95 active:scale-90 transition-all motion-reduce:transition-none`}
                             aria-label="Home"
                         >
                             <Logo />

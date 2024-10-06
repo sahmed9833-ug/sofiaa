@@ -10,13 +10,14 @@ export interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const { data: { course, institution, from, to, grade, modules }, body} = entry;
 ---
 <Card>
-    <h2><span class="text-xl font-semibold">{entry.data.course}</span> &sdot; <span>{entry.data.institution}</span></h2>
-    <p>{formatDate(entry.data.from)} - {formatDate(entry.data.to)}</p>
-    <p class="mb-4">Grade: {entry.data.grade}</p>
+    <h2><span class="text-xl font-semibold">{course}</span> &sdot; <span>{institution}</span></h2>
+    <p>{formatDate(from)} - {formatDate(to)}</p>
+    <p class="mb-4">Grade: {grade}</p>
     <div class="prose font-sans">
-        <Accordion summary="Modules" details={entry.data.modules}/>
-        {entry.body && <Content/>}
+        <Accordion summary="Modules" details={modules}/>
+        {body && <Content/>}
     </div>
 </Card>

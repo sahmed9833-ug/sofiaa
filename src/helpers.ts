@@ -1,4 +1,4 @@
-export function formatDate(date: Date | null): string {
+export function formatDate(date?: Date): string {
     if (!date) {
         return "Present";
     }
