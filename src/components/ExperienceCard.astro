@@ -21,8 +21,8 @@ const { company, location, roles } = data;
             <h3 class="text-lg font-medium mt-4">{role.title}</h3>
             <p class="mb-4">{formatDate(role.from)} - {formatDate(role.to)}</p>
             <div class="prose font-sans">
-                <p set:html={role.description}/>
-                <Accordion summary="Tools & technologies" details={role.tech}/>
+                {role.description && <p set:html={role.description}/>}
+                {role.tech && <Accordion  summary="Tools & technologies" details={role.tech}/>}
             </div>
         </section>
     ))}
