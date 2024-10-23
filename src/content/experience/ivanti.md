@@ -13,7 +13,7 @@ roles:
       from: 2019-10-21
       to: 2021-04-04
     - title: Software Engineer
-      description: Shifted into a role focused on development for the business's Industrial IoT platform. Projects so far include overhauling the orchestration of Docker containers to improve the dev experience, helping migrate to Vue 3, and implementing novel UI features for managing devices at scale.
+      description: Shifted into a role focused on development for the business's Industrial IoT platform. Projects included overhauling the orchestration of Docker containers to improve the dev experience, migration to Vue 3, and implementing novel UI features for managing devices at scale.
       tech:
           - Vue.js
           - Tailwind CSS
