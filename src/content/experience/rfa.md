@@ -11,6 +11,6 @@ roles:
       - C#/.NET
       - Elasticsearch
       - SQL Server
-      - MS Azure
+      - Azure
 location: Manchester, United Kingdom
 ---
