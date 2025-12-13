@@ -1,35 +1,48 @@
 ---
-import Card from "../components/Card.astro";
+import Card from "@components/base/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.tsx";
-import ImageCard from "../components/ImageCard.astro";
-import Accordion from "../components/Accordion.astro";
+import Button from "@components/base/Button.tsx";
+import ImageCard from "@components/base/ImageCard.astro";
+import Accordion from "@components/base/Accordion.astro";
 ---
 
-<Layout title="Hi, I'm Sofia.">
+<Layout title="Hi, I'm Sofia">
   <Card>
     <div class="prose font-sans">
       <p>Based in Manchester, United Kingdom📍</p>
       <p>
-        In my day job I work as a Senior Software Developer in the business intelligence space.
+        In my day job I work as a Senior Software Developer in the business
+        intelligence space.
       </p>
       <p>
-        In my spare time I enjoy cooking, crafting, doodling, playing around with tech both new and
-        old, and walking the dogs.
+        In my spare time I enjoy cooking, crafting, doodling, playing around
+        with tech both new and old, and walking the dogs.
       </p>
       <Accordion summary="The dogs!">
-
         <div class="flex flex-col p-4 gap-4">
-          <ImageCard imagePath="/src/assets/hannie_roach.jpeg" altText="Hannie, a white greyhound with dark brown patches and spots, lays upside down in her dog bed while gazing vaguely towards the camera."></ImageCard>
-          <ImageCard imagePath="/src/assets/wood.jpeg" altText="Hannie and Marlow, an all black greyhound, are outdoors standing in the glade of a wood. They are both wearing their harneses and while Marlow snoots something on the ground Hannie looks off to the side."></ImageCard>
-          <ImageCard imagePath="/src/assets/marlow_roach.jpeg" altText="Marlow lays upside down at the top of some stairs and gazes down at the camera while baring some of his large teeth."></ImageCard>
+          <ImageCard
+            imagePath="/src/assets/hannie_roach.jpeg"
+            altText="Hannie, a white greyhound with dark brown patches and spots, lays upside down in her dog bed while gazing vaguely towards the camera."
+          />
+          <ImageCard
+            imagePath="/src/assets/wood.jpeg"
+            altText="Hannie and Marlow, an all black greyhound, are outdoors standing in the glade of a wood. They are both wearing their harneses and while Marlow snoots something on the ground Hannie looks off to the side."
+          />
+          <ImageCard
+            imagePath="/src/assets/marlow_roach.jpeg"
+            altText="Marlow lays upside down at the top of some stairs and gazes down at the camera while baring some of his large teeth."
+          />
         </div>
       </Accordion>
       <p>For more check out the links below ⤵</p>
     </div>
   </Card>
   <div class="flex justify-evenly">
-    <Button title="GitHub" path="https://github.com/sahmed9833-ug" target="_blank" />
+    <Button
+      title="GitHub"
+      path="https://github.com/sahmed9833-ug"
+      target="_blank"
+    />
     <Button
       title="LinkedIn"
       path="https://www.linkedin.com/in/sofia-codes/"

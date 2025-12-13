@@ -1,14 +1,15 @@
 ---
-import ExperienceCard from "../components/ExperienceCard.astro";
+import ExperienceCard from "@components/experience/ExperienceCard.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const experience = await getCollection('experience');
+const experience = await getCollection("experience");
 /** Sort by date in descending order */
-const sortedExperience = experience.sort((a, b) => a.data.roles[0].from < b.data.roles[0].from ? 1 : -1)
+const sortedExperience = experience.sort((a, b) =>
+  a.data.roles[0].from < b.data.roles[0].from ? 1 : -1,
+);
 ---
+
 <Layout title="Experience">
-    {sortedExperience.map(entry => (
-        <ExperienceCard entry={entry}/>
-    ))}
+  {sortedExperience.map((entry) => <ExperienceCard entry={entry} />)}
 </Layout>

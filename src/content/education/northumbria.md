@@ -2,10 +2,10 @@
 institution: Northumbria University
 course: BSc Applied Computing
 modules:
-    - Object-oriented and Web Programming
-    - Object-oriented Modelling and Design
-    - Project Management
-    - Strategic Systems Management
+  - Object-oriented and Web Programming
+  - Object-oriented Modelling and Design
+  - Project Management
+  - Strategic Systems Management
 grade: 1st
 from: 2016-09-01
 to: 2017-06-01

@@ -1,0 +1,26 @@
+---
+import Arrow from "./Arrow.astro";
+
+export interface Props {
+  summary: string;
+  details?: string[];
+}
+
+const { summary, details } = Astro.props;
+---
+
+<details class="acc-details group">
+  <summary class="acc-summary">
+    <Arrow
+      class="ml-3 text-periwinkle-dark dark:text-slate-300 group-open:rotate-90"
+    />
+    {summary}
+  </summary>
+
+  <slot />
+  <div class="px-4 pb-1">
+    <ul role="list" class="list-none pl-6 space-y-1">
+      {details?.map((detailItem) => <li class="relative">{detailItem}</li>)}
+    </ul>
+  </div>
+</details>

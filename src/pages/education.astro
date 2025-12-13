@@ -1,14 +1,17 @@
 ---
-import EducationCard from "../components/EducationCard.astro";
+import EducationCard from "@components/education/EducationCard.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const education = await getCollection('education');
+const education = await getCollection("education");
 ---
+
 <Layout title="Education">
-    {education.sort((a, b) => {
+  {
+    education
+      .sort((a, b) => {
         return a.data.from < b.data.from ? 1 : -1;
-    }).map(entry => (
-        <EducationCard entry={entry}/>
-    ))}
+      })
+      .map((entry) => <EducationCard entry={entry} />)
+  }
 </Layout>

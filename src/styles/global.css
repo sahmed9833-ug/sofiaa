@@ -1,0 +1,109 @@
+@font-face {
+  font-family: Excalifont;
+  src: url(/fonts/Excalifont-Regular.woff2) format(woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.noise {
+  @apply noise-[202,14,3];
+}
+
+.bg-dot-grid {
+  background-color: #f9fafb; /* light base, tweak as needed */
+  background-image: radial-gradient(
+    circle,
+    rgba(15, 23, 42, 0.2) 1px,
+    transparent 0
+  );
+  background-size: 14px 14px; /* grid spacing */
+}
+
+.html {
+  @apply bg-slate-100 dark:bg-slate-700 max-h-full overflow-y-scroll bg-dot-grid;
+}
+.header {
+  @apply transition-all motion-reduce:transition-none z-10 fixed w-full 
+  bg-periwinkle-lighter  dark:bg-slate-700  border-b-periwinkle-regular dark:border-b-gunmetal-dark border-b-2 noise bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm;
+}
+.main {
+  @apply z-0 m-auto max-w-prose
+  text-periwinkle-medium
+  dark:text-slate-300 
+  p-2 h-full pt-40 sm:pt-52 
+  sm:opacity-100;
+}
+
+.shiny {
+  @apply bg-[radial-gradient(circle_at_0%_100%,rgba(2100,209,222,0.05),rgba(185,152,222,0.08),transparent_65%)];
+}
+
+.card {
+  @apply font-mono
+  prose-p:text-periwinkle-medium
+  dark:text-slate-300
+  dark:prose-p:text-slate-300
+  dark:prose-li:text-slate-300
+  p-4
+  mb-4
+  border-2
+  border-periwinkle-regular
+  dark:border-gunmetal-dark
+  shadow-periwinkle-hover
+  dark:shadow-gunmetal-hover
+  bg-slate-50
+  dark:bg-slate-600
+  rounded-xl;
+}
+
+.btn {
+  @apply font-excalifont text-lg text-periwinkle-medium dark:text-slate-300
+        bg-slate-50 dark:bg-slate-600
+        block px-4 py-2
+        border-2 border-solid border-periwinkle-regular dark:border-gunmetal-dark
+        rounded-xl
+        shadow-periwinkle hover:shadow-periwinkle-hover
+        dark:shadow-gunmetal-dark dark:hover:shadow-gunmetal-hover
+        transition-all
+        relative top-0 left-0
+        hover:top-0.5 hover:-left-0.5
+        hover:after:top-px hover:after:-left-0.5
+        hover:before:-bottom-0.5 hover:before:right-px
+        active:top-[3px] active:-left-[3px] shiny;
+}
+
+.arrow-stroke {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+  stroke-dasharray: 0.1 0.9;
+  opacity: 0.95;
+}
+
+.acc-details {
+  @apply text-periwinkle-dark bg-periwinkle-light border-periwinkle-lighter dark:bg-slate-700 rounded-lg border-2 dark:border-gunmetal-dark noise;
+}
+.acc-summary {
+  @apply font-excalifont text-lg text-periwinkle-dark dark:text-slate-300
+    cursor-pointer py-4 px-1
+    group-open:pb-0  list-none [&::-webkit-details-marker]:hidden 
+    flex items-center justify-start gap-2;
+}
+
+.acc-details > * > ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.68em;
+  width: 0.52rem;
+  height: 0.52rem;
+  background-size: contain;
+  background-image: url("../assets/dot-periwinkle.svg");
+  background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+  .acc-details > * > ul > li::before {
+    background-image: url("../assets/dot-slate.svg");
+  }
+}

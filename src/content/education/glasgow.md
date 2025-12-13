@@ -2,11 +2,11 @@
 institution: University of Glasgow
 course: MSc Computing Science
 modules:
-    - Cryptography and Secure Development
-    - Cyber System Forensics
-    - Functional Programming
-    - Human-computer Interaction
-    - Safety-critical Systems
+  - Cryptography and Secure Development
+  - Cyber System Forensics
+  - Functional Programming
+  - Human-computer Interaction
+  - Safety-critical Systems
 grade: Merit
 from: 2017-09-01
 to: 2018-09-01
