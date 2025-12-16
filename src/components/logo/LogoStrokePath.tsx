@@ -4,9 +4,6 @@ type Props = {
 
 export default function LogoStrokePath({ d }: Props) {
   return (
-    <path
-      d={d}
-      className="fill-periwinkle-regular dark:fill-periwinkle-darker"
-    />
+    <path d={d} className="fill-periwinkle-regular dark:fill-gunmetal-dark" />
   );
 }
