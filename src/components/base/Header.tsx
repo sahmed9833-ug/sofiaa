@@ -33,36 +33,39 @@ export default function Header() {
         className={`header ${isScrolled || isMenuOpen ? "with-background animate-bouncy-header" : ""}`}
       >
         <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
-          <div className="flex justify-between items-center">
+          <div className="flex">
+            <div className="flex flex-1"></div>
             <a
               href="/"
               className={`${
-                isScrolled ? "w-14 sm:w-20" : "w-20 sm:w-32"
-              } cursor-pointer hover:scale-95 active:scale-90 animate-bouncy-btn motion-reduce:transition-none`}
+                isScrolled ? "w-14 sm:w-20" : "w-36 h-36 flex-shrink-0 sm:w-36"
+              } cursor-pointer hover:scale-95 active:scale-90 transition-all animate-bouncy-btn motion-reduce:transition-none`}
               aria-label="Home"
             >
               <Logo />
             </a>
-            <div className="sm:hidden">
-              <BaseButton
-                title="menu"
-                classes="smol animate-bouncy-btn"
-                onClick={() => setMenuOpen(!isMenuOpen)}
-              >
-                <svg
-                  className="stroke-periwinkle-medium dark:stroke-slate-300 w-6 h-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
+            <div className="flex-1 sm:hidden my-auto">
+              <div className=" w-fit float-right ">
+                <BaseButton
+                  title="menu"
+                  classes="smol animate-bouncy-btn"
+                  onClick={() => setMenuOpen(!isMenuOpen)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              </BaseButton>
+                  <svg
+                    className="stroke-periwinkle-medium dark:stroke-slate-300 w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </BaseButton>
+              </div>
             </div>
           </div>
           <ul

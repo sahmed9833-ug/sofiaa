@@ -38,7 +38,9 @@ const { title } = Astro.props;
   <body>
     <Header client:load />
     <main class="main">
-      <h1 class="text-5xl sm:text-5xl font-excalifont ml-3 mb-4 sm:ml-1">
+      <h1
+        class="text-5xl sm:text-5xl text-center font-excalifont ml-3 mb-4 sm:ml-1"
+      >
         {title}
       </h1>
       <slot />
