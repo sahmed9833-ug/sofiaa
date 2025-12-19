@@ -40,7 +40,7 @@ export default function Header() {
               href="/"
               className={`${
                 isScrolled ? "w-14 sm:w-20" : "w-36 h-36 flex-shrink-0 sm:w-36"
-              } cursor-pointer animate-bouncy-btn motion-reduce:transition-none`}
+              } cursor-pointer transition-all animate-bouncy-btn motion-reduce:transition-none`}
               aria-label="Home"
             >
               <Logo />
