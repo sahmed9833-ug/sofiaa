@@ -32,6 +32,35 @@ module.exports = {
         "gunmetal-hover": "-2px 2px 0 #242c35",
         "gunmetal-small-hover": "0px 0px 0 #242c35",
       },
+      keyframes: {
+        "bouncy-header": {
+          "0%": { transform: "translateY(-16px)", opacity: "0" },
+          "60%": { transform: "translateY(3px)", opacity: "1" },
+          "80%": { transform: "translateY(-1px)" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "bouncy-btn": {
+          "0%": {
+            transform: "translateY(-14px) scaleY(1) scaleX(1)",
+            opacity: "0",
+          },
+          "40%": { opacity: "0.2" },
+          "60%": {
+            transform: "translateY(0) scaleY(0.96) scaleX(1.02)",
+            opacity: "1",
+          },
+          "80%": { transform: "translateY(-3px) scaleY(1.02) scaleX(0.99)" },
+          "100%": {
+            transform: "translateY(0) scaleY(1) scaleX(1)",
+            opacity: "1",
+          },
+        },
+      },
+      animation: {
+        "bouncy-header":
+          "bouncy-header 260ms cubic-bezier(0.12, 0.6, 0.15, 1) both",
+        "bouncy-btn": "bouncy-btn 240ms cubic-bezier(0.16, 0.7, 0.2, 1) both",
+      },
     },
   },
   plugins: [typography, noise],

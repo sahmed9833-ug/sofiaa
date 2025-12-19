@@ -24,13 +24,13 @@ export default function Header() {
       <div
         className={`${
           isMenuOpen
-            ? "noise bg-black/20 backdrop-blur-sm shadow-sm z-10"
+            ? "noise bg-black/20 backdrop-blur-sm shadow-sm z-10 transition-transform"
             : "bg-transparent -z-10"
         } h-screen w-screen fixed sm:hidden`}
         onClick={() => setMenuOpen(!isMenuOpen)}
       ></div>
       <header
-        className={`header ${isScrolled || isMenuOpen ? "with-background" : ""}`}
+        className={`header ${isScrolled || isMenuOpen ? "with-background animate-bouncy-header" : ""}`}
       >
         <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
           <div className="flex justify-between items-center">
@@ -38,7 +38,7 @@ export default function Header() {
               href="/"
               className={`${
                 isScrolled ? "w-14 sm:w-20" : "w-20 sm:w-32"
-              } cursor-pointer hover:scale-95 active:scale-90 transition-all motion-reduce:transition-none`}
+              } cursor-pointer hover:scale-95 active:scale-90 animate-bouncy-btn motion-reduce:transition-none`}
               aria-label="Home"
             >
               <Logo />
@@ -46,7 +46,7 @@ export default function Header() {
             <div className="sm:hidden">
               <BaseButton
                 title="menu"
-                classes="smol"
+                classes="smol animate-bouncy-btn"
                 onClick={() => setMenuOpen(!isMenuOpen)}
               >
                 <svg
@@ -68,12 +68,16 @@ export default function Header() {
           <ul
             className={`${isMenuOpen ? "" : "hidden"} pt-4 sm:pt-0 sm:flex sm:items-center`}
           >
-            {navigationItems.map((page) => (
+            {navigationItems.map((page, i) => (
               <li
                 key={page.title}
                 className="mb-4 last:mb-2 sm:last:mb-0 sm:mr-4 sm:last:mr-0 sm:mb-0 h-fit"
               >
-                <BaseButton title={page.title} path={page.path} />
+                <BaseButton
+                  title={page.title}
+                  path={page.path}
+                  classes="animate-bouncy-btn origin-bottom"
+                />
               </li>
             ))}
           </ul>
