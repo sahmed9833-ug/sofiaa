@@ -35,15 +35,17 @@ export default function Header() {
         <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
           <div className="flex">
             <div className="flex flex-1"></div>
+
             <a
               href="/"
               className={`${
                 isScrolled ? "w-14 sm:w-20" : "w-36 h-36 flex-shrink-0 sm:w-36"
-              } cursor-pointer hover:scale-95 active:scale-90 transition-all animate-bouncy-btn motion-reduce:transition-none`}
+              } cursor-pointer animate-bouncy-btn motion-reduce:transition-none`}
               aria-label="Home"
             >
               <Logo />
             </a>
+
             <div className="flex-1 sm:hidden my-auto">
               <div className=" w-fit float-right ">
                 <BaseButton
@@ -79,7 +81,7 @@ export default function Header() {
                 <BaseButton
                   title={page.title}
                   path={page.path}
-                  classes="animate-bouncy-btn origin-bottom"
+                  classes={`animate-bouncy-btn delay-${i * 141} origin-bottom`}
                 />
               </li>
             ))}
