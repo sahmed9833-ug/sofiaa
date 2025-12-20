@@ -1,12 +1,18 @@
 /** Page Transition **/
 @keyframes bounce {
   0% {
-    transform: scale(1);
+    transform: scale(0.999);
   }
-  30% {
-    transform: scale(0.996);
+  20% {
+    transform: scale(0.995);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/** Header **/
+@keyframes fade {
+  0% {
   }
 }

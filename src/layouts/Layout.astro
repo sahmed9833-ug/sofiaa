@@ -10,23 +10,22 @@ export interface Props {
 
 const { title } = Astro.props;
 
-const bounceAnimation = {
+const pageBounce = {
   old: {
     name: "bounce",
-    duration: "0.5s",
-    easing: "ease-in",
+    duration: "0.4s",
+    easing: "ease-linear",
     direction: "reverse",
   },
   new: {
     name: "bounce",
-    duration: "0.5s",
-    easing: "ease-in-out",
+    duration: "0.4s",
+    easing: "ease-out",
   },
 };
-
 const pageTransition = {
-  forwards: bounceAnimation,
-  backwards: bounceAnimation,
+  forwards: pageBounce,
+  backwards: pageBounce,
 };
 ---
 
