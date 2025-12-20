@@ -30,7 +30,7 @@ export default function Header() {
         onClick={() => setMenuOpen(!isMenuOpen)}
       ></div>
       <header
-        className={`header ${isScrolled || isMenuOpen ? "with-background animate-bouncy-header" : ""}`}
+        className={`header ${isScrolled || isMenuOpen ? "with-background" : ""}`}
       >
         <nav className="p-4 sm:pl-0 max-w-prose mx-auto sm:flex justify-between">
           <div className="flex">
