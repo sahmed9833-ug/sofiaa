@@ -40,7 +40,7 @@ export default function Header() {
               href="/"
               className={`${
                 isScrolled ? "w-14 sm:w-20" : "w-36 h-36 flex-shrink-0 sm:w-36"
-              } cursor-pointer transition-all animate-bouncy-btn motion-reduce:transition-none`}
+              } cursor-pointer transition-all hover:scale-[0.98] active:scale-[0.96] motion-reduce:transition-none`}
               aria-label="Home"
             >
               <Logo />
@@ -50,7 +50,7 @@ export default function Header() {
               <div className=" w-fit float-right ">
                 <BaseButton
                   title="menu"
-                  classes="smol animate-bouncy-btn"
+                  classes="smol"
                   onClick={() => setMenuOpen(!isMenuOpen)}
                 >
                   <svg
@@ -78,11 +78,7 @@ export default function Header() {
                 key={page.title}
                 className="mb-4 last:mb-2 sm:last:mb-0 sm:mr-4 sm:last:mr-0 sm:mb-0 h-fit"
               >
-                <BaseButton
-                  title={page.title}
-                  path={page.path}
-                  classes={`animate-bouncy-btn delay-${i * 141} origin-bottom`}
-                />
+                <BaseButton title={page.title} path={page.path} />
               </li>
             ))}
           </ul>
