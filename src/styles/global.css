@@ -39,10 +39,10 @@
   @apply bg-slate-100 dark:bg-slate-700 max-h-full overflow-y-scroll bg-dot-grid;
 }
 .header {
-  @apply bg-transparent motion-reduce:transition-none z-10 fixed w-full border-periwinkle-regular dark:border-gunmetal;
+  @apply bg-transparent motion-reduce:transition-none z-10 fixed w-full;
 }
 .header.with-background {
-  @apply bg-periwinkle-light dark:bg-gunmetal;
+  @apply bg-periwinkle-light dark:bg-gunmetal bg-opacity-60 dark:bg-opacity-60 backdrop-blur-sm;
 }
 
 .main {

@@ -2,25 +2,27 @@
 company: Ivanti
 roles:
   - title: Associate Software Engineer
-    description: Joined Ivanti as a member of a cross-functional agile team working in the company's Supply Chain business unit (also known as Ivanti Wavelink).<br><br>During this period tasks included maintenance and feature development of Wavelink’s flagship Terminal Emulation product for Windows and Android, and delivering its port to iOS.<br><br> I also helped deliver Wavelink’s first cloud offering, a platform to aid customers in the management of Warehouse Assets, seeing the project through from conception to release.
+    description: Joined Ivanti as part of a new, cross-functional product team focused on building offerings for the Supply Chain industry. Collaborating with teams in the US and Warsaw.<br><br>Worked on a terminal app called Velocity, delivering bug fixes, features, and later its port to iOS. <br>This position introduced me to some fun new areas of software development, Mobile & Desktop apps; integrating SDKs from both software and hardware providers; and the art of QA. Velocity's customers include some of the world's largest Supply Chain companies whose driving force is improving operational efficiency. To that end, we had in place a regimented QA strategy that involved cross-team collaboration and phased rollouts to ensure customers only ever got the best experience.<br><br>Later, as part of Ivanti's transition away from licenses to a SaaS-based model we would be tasked with building products for the company-wide Ivanti Neurons platform. These products would tightly integrate with the Velocity app already on customers' devices, providing value as well as cross-sell opportunities.
     tech:
-      - Angular
+      - C#/.NET + Xamarin + Web API
       - TypeScript
-      - C#
-      - Xamarin
-      - .NET Core
+      - Angular, React
+      - Android, Windows, iOS
       - MongoDB
     from: 2019-10-21
     to: 2021-04-04
   - title: Software Engineer
-    description: Shifted into a role focused on development for the business's Industrial IoT platform. Projects included overhauling the orchestration of Docker containers to improve the dev experience, migration to Vue 3, and implementing novel UI features for managing devices at scale.
+    description: Later the business acquired an Industrial IoT (IIoT) platform and working alongside a dev team in France and Product/UX teams in the US we took this product to market. Integrating it tightly with both the Ivanti Neurons platform and Velocity app and working with partners including Zebra, we built features that enabled warehouse automation in a variety of ways and at scale. Very cool opportunity!
     tech:
-      - Vue.js
+      - TypeScript + Node.js
+      - Vue.js + Pinia
       - Tailwind CSS
-      - TypeScript
-      - Node.js
       - MongoDB
+      - WebSocket
+      - RabbitMQ
       - Docker
+      - Linux (Debian + RPM)
+      - Bash
     from: 2021-04-05
     to: 2024-09-13
 location: Daresbury, Cheshire, United Kingdom
