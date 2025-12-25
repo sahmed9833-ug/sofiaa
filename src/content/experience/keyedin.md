@@ -2,7 +2,7 @@
 company: KeyedIn Solutions
 roles:
   - title: Developer
-    description: This was an office-based full-stack developer role working on a Project & Portfolio Management (PPM) SaaS product.<br><br>  Duties included developing bespoke reporting tools for clients, implementing bug fixes. and collaborating closely with Product and QA to develop new features. <br><br> Work spanned both newer and legacy parts of the system, with some jQuery sprinkled in for good measure.
+    description: This was an office-based full-stack developer role working on a Project & Portfolio Management (PPM) SaaS product.<br><br>  Duties included developing bespoke reporting tools for clients, implementing bug fixes. and collaborating closely with Product and QA to develop new features. <br><br> Work spanned both newer and legacy parts of the system, with some jQuery sprinkled in for good measure.<br><br>KeyedIn went on to merge with Sciforma who were later acquired by Planview.
     tech:
       - C#/.NET + ASP.NET MVC
       - SQL Server

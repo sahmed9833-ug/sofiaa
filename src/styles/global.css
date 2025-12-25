@@ -42,7 +42,8 @@
   @apply bg-transparent motion-reduce:transition-none z-10 fixed w-full;
 }
 .header.with-background {
-  @apply bg-periwinkle-light dark:bg-gunmetal bg-opacity-60 dark:bg-opacity-60 backdrop-blur-sm;
+  @apply bg-periwinkle-light dark:bg-gunmetal bg-opacity-60 dark:bg-opacity-60 
+  backdrop-blur-sm border-b-2 border-b-periwinkle-regular dark:border-b-gunmetal;
 }
 
 .main {
