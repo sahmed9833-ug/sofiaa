@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/animations.css";
 import Header from "@components/base/Header.js";
 import { ClientRouter } from "astro:transitions";
+import BaseButton from "@components/base/BaseButton";
 
 export interface Props {
   title: string;
@@ -62,6 +63,13 @@ const pageTransition = {
         {title}
       </h1>
       <slot />
+      <div class="flex justify-evenly">
+        <BaseButton
+          title="hello@sofia.bio"
+          path="mailto:hello@sofia.bio?subject=Hello!"
+          target="_blank"
+        />
+      </div>
     </main>
   </body>
 </html>
