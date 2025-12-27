@@ -26,4 +26,14 @@ export const collections = {
       location: z.string(),
     }),
   }),
+  projects: defineCollection({
+    schema: z.object({
+      title: z.string(),
+      description: z.string(),
+      tags: z.optional(z.array(z.string())),
+      path: z.string(),
+      imagePath: z.string(),
+      imageAltText: z.string(),
+    }),
+  }),
 };

@@ -1,20 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import ProjectCard, {
-  type ProjectEntry,
-} from "@components/projects/ProjectCard.astro";
+import ProjectCard from "@components/projects/ProjectCard.astro";
 
-const projects: ProjectEntry[] = [
-  {
-    title: "sofia-pixi",
-    tags: ["UI", "TypeScript", "PixiJS"],
-    description:
-      "Home for my non-serious PixiJS projects and experiments. PixiJS provides an accessible yet powerful way to use WebGL so this is sure to grow!",
-    path: "https://pixi.sofia.bio",
-    imagePath: "/src/assets/sofia-pixi.png",
-    imageAltText: "Screenshot taken from pixi.sofia.bio",
-  },
-];
+const projects = await getCollection("projects");
 ---
 
 <Layout title="Projects">

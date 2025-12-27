@@ -2,22 +2,15 @@
 import BaseButton from "@components/base/BaseButton";
 import Card from "@components/base/Card.astro";
 import { Image } from "astro:assets";
-
-export interface ProjectEntry {
-  title: string;
-  tags: string[];
-  description?: string;
-  path?: string;
-  imagePath: string;
-  imageAltText: string;
-}
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  entry: ProjectEntry;
+  entry: CollectionEntry<"projects">;
 }
 
-const { title, tags, description, path, imagePath, imageAltText } =
-  Astro.props.entry;
+const { data } = Astro.props.entry;
+
+const { title, tags, description, path, imagePath, imageAltText } = data;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}",
@@ -31,7 +24,7 @@ if (!images[imagePath])
 <Card>
   <h2 class="text-xl font-semibold">{title}</h2>
   <div class="tag-container">
-    {tags.map((tag) => <span class="tag">{tag}</span>)}
+    {tags && tags.map((tag) => <span class="tag">{tag}</span>)}
   </div>
   <section>
     <p class="prose font-sans">{description}</p>

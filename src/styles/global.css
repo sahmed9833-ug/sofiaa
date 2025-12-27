@@ -151,7 +151,7 @@ h1 {
 
 .tag {
   @apply inline-flex items-center rounded 
-  bg-slate-700 dark:bg-slate-700 
+  bg-periwinkle-lighter dark:bg-slate-700 
   p-1 px-2 mx-1
   text-sm;
 }
