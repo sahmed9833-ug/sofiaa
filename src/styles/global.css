@@ -144,3 +144,21 @@ h1 {
     background-image: url("../assets/dot-slate.svg");
   }
 }
+
+.tag-container {
+  @apply mt-2 mb-2;
+}
+
+.tag {
+  @apply inline-flex items-center rounded 
+  bg-slate-700 dark:bg-slate-700 
+  p-1 px-2 mx-1
+  text-sm;
+}
+.tag:first-of-type {
+  @apply ml-0;
+}
+
+a > img {
+  @apply transition-all hover:scale-[0.99] hover:opacity-90;
+}

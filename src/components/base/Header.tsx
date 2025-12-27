@@ -7,9 +7,9 @@ export default function Header() {
   const [isScrolled, setScrolled] = useState(false);
 
   const navigationItems = [
-    { title: "Home", path: "/" },
     { title: "Experience", path: "/experience" },
     { title: "Education", path: "/education" },
+    { title: "Projects", path: "/projects" },
   ];
 
   const isWindowScrolled = () => window.scrollY > 50;

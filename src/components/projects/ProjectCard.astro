@@ -1,0 +1,55 @@
+---
+import BaseButton from "@components/base/BaseButton";
+import Card from "@components/base/Card.astro";
+import { Image } from "astro:assets";
+
+export interface ProjectEntry {
+  title: string;
+  tags: string[];
+  description?: string;
+  path?: string;
+  imagePath: string;
+  imageAltText: string;
+}
+
+export interface Props {
+  entry: ProjectEntry;
+}
+
+const { title, tags, description, path, imagePath, imageAltText } =
+  Astro.props.entry;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}",
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
+  );
+---
+
+<Card>
+  <h2 class="text-xl font-semibold">{title}</h2>
+  <div class="tag-container">
+    {tags.map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+  <section>
+    <p class="prose font-sans">{description}</p>
+    <Image
+      src={images[imagePath]()}
+      alt={imageAltText}
+      class:list={"rounded-md shadow-sm my-2"}
+    />
+    <div class="flex justify-end">
+      {
+        path && (
+          <BaseButton
+            title={`Go to ${title}`}
+            path={path}
+            classes="smol w-fit mt-2 self-end"
+          />
+        )
+      }
+    </div>
+  </section></Card
+>
