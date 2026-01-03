@@ -146,17 +146,14 @@ h1 {
 }
 
 .tag-container {
-  @apply mt-2 mb-2;
+  @apply mt-2 mb-2 flex flex-wrap;
 }
 
 .tag {
   @apply inline-flex items-center rounded 
   bg-periwinkle-lighter dark:bg-slate-700 
-  p-1 px-2 mx-1
-  text-sm;
-}
-.tag:first-of-type {
-  @apply ml-0;
+  p-1 px-2 mx-1 my-1
+  text-sm gap-1 h-fit whitespace-nowrap;
 }
 
 a > img {
