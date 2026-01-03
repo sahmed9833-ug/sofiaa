@@ -159,3 +159,7 @@ h1 {
 a > img {
   @apply transition-all hover:scale-[0.99] hover:opacity-90;
 }
+
+.link {
+  @apply text-periwinkle-medium dark:text-slate-300;
+}
