@@ -10,6 +10,6 @@ tags:
   - TypeScript
 path: https://pixi.sofia.bio
 github: https://github.com/hey-sofia/sofi-pixi
-imagePath: /src/assets/sofia-pixi.png
+imagePath: /src/assets/sofi-pixi.png
 imageAltText: Screenshot taken from pixi.sofia.bio
 ---
