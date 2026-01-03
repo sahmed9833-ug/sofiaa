@@ -32,6 +32,7 @@ export const collections = {
       description: z.string(),
       tags: z.optional(z.array(z.string())),
       path: z.string(),
+      github: z.string(),
       imagePath: z.string(),
       imageAltText: z.string(),
     }),

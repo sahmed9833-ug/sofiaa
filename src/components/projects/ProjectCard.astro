@@ -10,7 +10,8 @@ export interface Props {
 
 const { data } = Astro.props.entry;
 
-const { title, tags, description, path, imagePath, imageAltText } = data;
+const { title, tags, description, path, github, imagePath, imageAltText } =
+  data;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}",
@@ -33,11 +34,20 @@ if (!images[imagePath])
       alt={imageAltText}
       class:list={"rounded-md shadow-sm my-2"}
     />
-    <div class="flex justify-end">
+    <div class="flex justify-end gap-2">
+      {
+        github && (
+          <BaseButton
+            title="Github"
+            path={path}
+            classes="smol w-fit mt-2 self-end"
+          />
+        )
+      }
       {
         path && (
           <BaseButton
-            title={`Go to ${title}`}
+            title={`Visit ${title}`}
             path={path}
             classes="smol w-fit mt-2 self-end"
           />
